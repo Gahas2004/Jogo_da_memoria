@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jogo da Memória</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>JOGO DA MEMÓRIA</h1>
+    </header>
+    <div id="start-screen">
+        <h2>Regras do Jogo</h2>
+        <p>Encontre todos os pares de cartas. Clique em uma carta para virá-la. Se duas cartas consecutivas forem iguais, elas permanecerão viradas. Caso contrário, elas serão viradas de volta. O jogo termina quando todos os pares forem encontrados.</p>
+        <h3>Escolha o tamanho do tabuleiro:</h3>
+        <button data-size="4">4x4</button>
+        <button data-size="6">6x6</button>
+    </div>
+    <script>
+        document.querySelectorAll('#start-screen button').forEach(button => {
+            button.addEventListener('click', () => {
+                const size = button.getAttribute('data-size');
+                window.location.href = `game.html?size=${size}`;
+            });
+        });
+    </script>
+</body>
+</html>
